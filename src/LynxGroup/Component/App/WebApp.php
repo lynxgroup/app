@@ -2,7 +2,7 @@
 
 use LynxGroup\Contracts\App\WebAppInterface;
 
-use LynxGroup\Contracts\Container\Container as ContainerInterface;
+use LynxGroup\Contracts\Container\Container as ContainerInterface; 
 
 use Psr\Http\Message\RequestInterface;
 
