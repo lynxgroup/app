@@ -3,7 +3,11 @@
     "type": "library",
     "description": "web app",
     "require": {
-        "php": ">=5.5.0"
+        "php": ">=5.5.0",
+        "lynxgroup/container": "dev-master",
+        "lynxgroup/odm": "dev-master",
+        "lynxgroup/http": "dev-master",
+        "lynxgroup/middleware": "dev-master"
     },
     "autoload": {
         "psr-4": {
