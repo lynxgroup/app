@@ -8,6 +8,8 @@ use Psr\Http\Message\RequestInterface;
 
 use Psr\Http\Message\ResponseInterface;
 
+use Exception;
+
 class WebApp implements WebAppInterface
 {
 	protected $container;
@@ -44,7 +46,13 @@ class WebApp implements WebAppInterface
 		{
 			$response = $this->middleware->__invoke($request, $response);
 		}
-		catch(\Exception $e)
+		catch(NotFoundException $e)
+		{
+			$response = $e->getResponse()->withStatus(404);
+
+			$response->getBody()->write('NotFoundException');
+		}
+		catch(Exception $e)
 		{
 			$response = $e->getResponse()->withStatus(404);
 
