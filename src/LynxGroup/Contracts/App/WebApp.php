@@ -1,5 +1,5 @@
 <?php namespace LynxGroup\Contracts\App;
 
-interface WebAppInterface
+interface WebApp
 {
 } 

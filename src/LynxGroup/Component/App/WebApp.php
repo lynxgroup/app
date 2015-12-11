@@ -1,8 +1,8 @@
 <?php namespace LynxGroup\Component\App;
 
-use LynxGroup\Contracts\App\WebAppInterface;
+use LynxGroup\Contracts\App\WebApp as WebAppInterface;
 
-use LynxGroup\Contracts\Container\Container as ContainerInterface; 
+use LynxGroup\Contracts\Container\Container; 
 
 use Psr\Http\Message\RequestInterface;
 
@@ -14,7 +14,7 @@ class WebApp implements WebAppInterface
 
 	protected $middleware;
 
-	public function __construct(ContainerInterface $container)
+	public function __construct(Container $container)
 	{
 		$this->container = $container;
 
