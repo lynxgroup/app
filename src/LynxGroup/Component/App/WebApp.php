@@ -52,6 +52,12 @@ class WebApp implements WebAppInterface
 
 			$response->getBody()->write('NotFoundException');
 		}
+		catch(NotAllowedException $e)
+		{
+			$response = $e->getResponse()->withStatus(404);
+
+			$response->getBody()->write('NotAllowedException');
+		}
 		catch(Exception $e)
 		{
 			$response = $e->getResponse()->withStatus(404);
